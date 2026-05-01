@@ -1,0 +1,18 @@
+{
+  "_readme": "Add the 'hooks' block below into your ~/.claude/settings.json file. Replace the python path with your own (see instructions in check-banned-phrases.py).",
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "YOUR_PYTHON_PATH YOUR_SCRIPT_PATH/check-banned-phrases.py",
+            "statusMessage": "Checking for banned phrases..."
+          }
+        ]
+      }
+    ]
+  }
+}
